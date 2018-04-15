@@ -1,0 +1,7 @@
+[user]
+	email = hatanlinh13@gmail.com
+	name = hatanlinh13
+[core]
+	askpass = 
+[credential "https://github.com"]
+	username = hatanlinh13
