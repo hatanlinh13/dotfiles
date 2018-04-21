@@ -1,9 +1,6 @@
 ! Colorscheme settings
 #include ".xrdb/colors/gruvbox-dark"
 
-! Cursor theme
-Xcursor*theme: Breeze-Obsidian
-
 ! Urxvt settings
 Rxvt*scrollBar:false
 URxvt*font: xft:DejaVuSansMonoNerdFont:size=10
