@@ -1,2 +1,37 @@
+! Colorscheme settings
+#include ".xrdb/colors/gruvbox-dark"
+
+! Urxvt settings
+Rxvt*termName:rxvt-unicode
+Rxvt.scrollBar:false
 URxvt.font: xft:DejaVuSansMonoNerdFont:size=10
 URxvt.letterSpace: -1
+!! scroll behavior
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+URxvt.saveLines: 2048
+!! extensions
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,matcher,selection-to-clipboard,resize-font,vtwheel
+URxvt.url-select.underline: true
+URxvt.url-select.launcher: /usr/bin/google-chrome-stable
+!! press alt-u to activate url finder. press o when a url is finded to open it in chrome
+URxvt.keysym.M-u:           perl:url-select:select_next
+!! alt-escape to activate keyboard select mode, similar to the termite way. press y to yank a selected text.
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+!! alt-s to active find mode
+URxvt.keysym.M-s:           perl:keyboard-select:search
+!! copy/paste key syms
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+! Xft font configurations
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
