@@ -151,7 +151,7 @@ set laststatus=2
 set noshowmode
           " colors
 let g:lightline = {
-      \ 'colorscheme': 'berrybeans',
+      \ 'colorscheme': 'jellybeans',
       \ }
 
 
