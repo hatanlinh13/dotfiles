@@ -2,7 +2,6 @@
 #include ".xrdb/colors/gruvbox-dark"
 
 ! Urxvt settings
-Rxvt*termName:rxvt-unicode
 Rxvt.scrollBar:false
 URxvt.font: xft:DejaVuSansMonoNerdFont:size=10
 URxvt.letterSpace: -1
