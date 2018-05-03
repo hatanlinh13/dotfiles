@@ -5,6 +5,7 @@
 Rxvt*scrollBar:false
 URxvt*font: xft:DejaVuSansMonoNerdFont:size=10
 URxvt*letterSpace: -1
+URxvt*internalBorder: 10
 !! scroll behavior
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
