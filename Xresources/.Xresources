@@ -3,17 +3,21 @@
 
 ! Urxvt settings
 Rxvt*scrollBar:false
-URxvt*font: xft:DejaVuSansMonoNerdFont:size=10
-URxvt*letterSpace: -1
+URxvt*font: xft:DejaVuSansMonoNerdFontMono:size=10
+URxvt*letterSpace: 0
 URxvt*internalBorder: 10
 !! scroll behavior
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 URxvt*saveLines: 2048
-!! NO extensions
-URxvt*perl-ext:
+!! Extensions
+URxvt*perl-ext: eval
 URxvt*perl-ext-common:
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 ! Xft font configurations
 Xft*autohint: 0
