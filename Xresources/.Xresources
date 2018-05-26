@@ -11,6 +11,8 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 URxvt*saveLines: 2048
+!! Icons
+URxvt.iconFile: /usr/share/icons/Moka/32x32/apps/terminal.png
 !! Extensions
 URxvt*perl-ext: eval
 URxvt*perl-ext-common:
