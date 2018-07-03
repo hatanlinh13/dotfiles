@@ -102,7 +102,7 @@ set smartindent " smart indentation
 " UI config
 """"""""""""""""""""""""""""""""""""""""
 
-set cursorline " hightlight the current working line
+"set cursorline " hightlight the current working line
 set wildmenu   " visual autocomplete for command menu
 set showmatch  " hightlight matching {[()]}
                " disable preview attribute in completeopt
