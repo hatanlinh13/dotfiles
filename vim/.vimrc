@@ -69,6 +69,14 @@ syntax on           " enable syntax highlighting
 
                     " enable transparent
 highlight Normal ctermbg=None
+highlight Statement ctermbg=None
+highlight Title ctermbg=None
+highlight Todo ctermbg=None
+highlight Underlined ctermbg=None
+highlight ErrorMsg ctermbg=None
+highlight LineNr ctermbg=None
+highlight CursorLineNr ctermbg=None
+highlight VertSplit ctermbg=None
 
 
 """"""""""""""""""""""""""""""""""""""""
