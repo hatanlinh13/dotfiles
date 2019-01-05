@@ -117,3 +117,5 @@ source $ZSH/oh-my-zsh.sh
 
 # disable ctrl-q and ctrl-s
 stty -ixon
+# force tmux to use 256 colors
+alias tmux="tmux -2"

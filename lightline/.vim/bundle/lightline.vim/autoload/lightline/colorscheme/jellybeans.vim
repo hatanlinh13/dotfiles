@@ -23,17 +23,17 @@ let s:transparent = [ '#000000', 'None' ]
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
-let s:p.normal.left = [ [ s:base02, s:blue ], [ s:base2, s:transparent ] ]
-let s:p.insert.left = [ [ s:base02, s:green ], [ s:base2, s:transparent ] ]
-let s:p.replace.left = [ [ s:base02, s:red ], [ s:base2, s:transparent ] ]
-let s:p.visual.left = [ [ s:base02, s:magenta ], [ s:base2, s:transparent ] ]
-let s:p.inactive.left =  [ [ s:base0, s:transparent ], [ s:base0, s:transparent ] ]
+let s:p.normal.left = [ [ s:blue, s:transparent ], [ s:green, s:transparent ] ]
+let s:p.insert.left = [ [ s:yellow, s:transparent ], [ s:green, s:transparent ] ]
+let s:p.replace.left = [ [ s:red, s:transparent ], [ s:green, s:transparent ] ]
+let s:p.visual.left = [ [ s:magenta, s:transparent ], [ s:green, s:transparent ] ]
+let s:p.inactive.left =  [ [ s:green, s:transparent ], [ s:green, s:transparent ] ]
 
-let s:p.normal.middle = [ [ s:base0, s:transparent ] ]
-let s:p.inactive.middle = [ [ s:base0, s:transparent ] ]
+let s:p.normal.middle = [ [ s:base2, s:transparent ] ]
+let s:p.inactive.middle = [ [ s:base2, s:transparent ] ]
 
-let s:p.normal.right = [ [ s:base02, s:base2 ], [ s:base0, s:transparent ] ]
-let s:p.inactive.right = [ [ s:base0, s:transparent ], [ s:base0, s:transparent ] ]
+let s:p.normal.right = [ [ s:base2, s:transparent ], [ s:base2, s:transparent ] ]
+let s:p.inactive.right = [ [ s:base2, s:transparent ], [ s:base2, s:transparent ] ]
 
 let s:p.tabline.left = [ [ s:base2, s:transparent ] ]
 let s:p.tabline.tabsel = [ [ s:base3, s:transparent ] ]
