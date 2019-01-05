@@ -3,16 +3,19 @@
 
 ! Urxvt settings
 Rxvt*scrollBar:false
-URxvt*font: xft:DejaVuSansMonoNerdFontMono:size=10
+URxvt*font: xft:DejaVuSansMonoNerdFontMono:size=12
+URxvt*boldFont: xft:DejaVuSansMonoNerdFontMono:size=12
 URxvt*letterSpace: 0
-URxvt*internalBorder: 10
+URxvt*internalBorder: 20
+URxvt.depth: 32
+URxvt.background: [90]#000000
 !! scroll behavior
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
-URxvt*saveLines: 2048
+URxvt*saveLines: 10000
 !! Icons
-URxvt.iconFile: /usr/share/icons/Moka/32x32/apps/terminal.png
+!URxvt.iconFile: /usr/share/icons/Moka/32x32/apps/terminal.png
 !! Extensions
 URxvt*perl-ext: eval
 URxvt*perl-ext-common:
@@ -28,4 +31,4 @@ Xft*hintstyle: hintslight
 Xft*dpi: 96
 Xft*hinting: 1
 Xft*antialias: 1
-Xft*rgba: rgb
+Xft*rgba: rgba
