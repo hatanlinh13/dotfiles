@@ -21,8 +21,8 @@ unsetopt autocd beep extendedglob nomatch notify
 
 # Custom
 bindkey -e
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:$PATH
@@ -33,7 +33,56 @@ export ZSH=/home/hatanlinh13/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="hyperzsh-mod"
+ZSH_THEME="spaceship"
+#ZSH_THEME="hyperzsh-mod"
+
+# Spaceship theme specific settings
+if [[ "$ZSH_THEME" == "spaceship" ]]
+then
+	SPACESHIP_PROMPT_ORDER=(
+		dir           # Current directory section
+		jobs          # Background jobs indicator
+		line_sep      # Line break
+		char          # Prompt character
+	)
+
+	SPACESHIP_RPROMPT_ORDER=(
+		git_status
+		git_branch
+		time          # Time stampts section
+		user          # Username section
+	)
+
+	SPACESHIP_PROMPT_ADD_NEWLINE=false
+	SPACESHIP_PROMPT_SEPARATE_LINE=false
+	SPACESHIP_PROMPT_DEFAULT_PREFIX=""
+	SPACESHIP_PROMPT_DEFAULT_SUFFIX=""
+
+	SPACESHIP_CHAR_PREFIX=" "
+	SPACESHIP_CHAR_SUFFIX=""
+	SPACESHIP_CHAR_COLOR_SUCCESS=yellow
+	SPACESHIP_CHAR_COLOR_FAILURE=red
+	SPACESHIP_CHAR_COLOR_SECONDARY=green
+	
+	SPACESHIP_TIME_SHOW=true
+	SPACESHIP_TIME_COLOR=green
+	SPACESHIP_TIME_PREFIX=" "
+
+	SPACESHIP_USER_SHOW=always
+	SPACESHIP_USER_COLOR=yellow
+	SPACESHIP_USER_PREFIX=" "
+	SPACESHIP_USER_SUFFIX=""
+
+	SPACESHIP_DIR_COLOR=blue
+	SPACESHIP_DIR_TRUNC_PREFIX=".../"
+
+	SPACESHIP_JOBS_PREFIX=" "
+	SPACESHIP_JOBS_SUFFIX=""
+	SPACESHIP_JOBS_COLOR=red
+	SPACESHIP_JOBS_AMOUNT_THRESHOLD=1
+
+	SPACESHIP_GIT_BRANCH_PREFIX=" \ue0a0 "
+fi
 
 # Tmux autostart
 ZSH_TMUX_AUTOSTART=true
