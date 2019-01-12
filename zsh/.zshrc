@@ -49,7 +49,6 @@ then
 	SPACESHIP_RPROMPT_ORDER=(
 		git_status
 		git_branch
-		time          # Time stampts section
 		user          # Username section
 	)
 
@@ -64,13 +63,9 @@ then
 	SPACESHIP_CHAR_COLOR_FAILURE=red
 	SPACESHIP_CHAR_COLOR_SECONDARY=green
 	
-	SPACESHIP_TIME_SHOW=true
-	SPACESHIP_TIME_COLOR=green
-	SPACESHIP_TIME_PREFIX=" "
-
 	SPACESHIP_USER_SHOW=always
-	SPACESHIP_USER_COLOR=yellow
-	SPACESHIP_USER_PREFIX=" "
+	SPACESHIP_USER_COLOR=green
+	SPACESHIP_USER_PREFIX="  "
 	SPACESHIP_USER_SUFFIX=""
 
 	SPACESHIP_DIR_COLOR=blue

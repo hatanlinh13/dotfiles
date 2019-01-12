@@ -83,6 +83,8 @@ if !has('nvim')
 endif
 set showcmd
 set pastetoggle=<F3>
+" use system clipboard
+set clipboard=unnamedplus
 
 
 """"""""""""""""""""""""""""""""""""""""
