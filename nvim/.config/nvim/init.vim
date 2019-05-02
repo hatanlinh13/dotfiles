@@ -25,3 +25,8 @@ Plugin 'Shougo/neosnippet-snippets'
 let g:deoplete#enable_at_startup = 1
 " enable deoplete after = sign
 set isfname-==
+" use tabs
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+" auto close review
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
