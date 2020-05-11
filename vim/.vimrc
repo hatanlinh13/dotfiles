@@ -13,7 +13,7 @@ call vundle#begin()            " initialize
                                " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
                                " colorschemes
-Plugin 'flazz/vim-colorschemes'
+Plugin 'joshdick/onedark.vim'
                                " simple status line
 Plugin 'itchyny/lightline.vim'
                                " quoting/parenthesizing
@@ -22,6 +22,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
                                " git flags for NERDtree
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+                               " language syntax and indentation
+Plugin 'sheerun/vim-polyglot'
 
 call vundle#end()
 " PLUGINS END
@@ -46,32 +48,8 @@ set directory=$HOME/.vim/swapfiles//
 """"""""""""""""""""""""""""""""""""""""
 
 set background=dark " prefer dark variant
-colorscheme gruvbox " set the colorscheme
+colorscheme onedark " set the colorscheme
 syntax on           " enable syntax highlighting
-
-                    " enable transparent
-highlight Normal ctermbg=None
-highlight Statement ctermbg=None
-highlight Title ctermbg=None
-highlight Todo ctermbg=None
-highlight Underlined ctermbg=None
-highlight ErrorMsg ctermbg=None
-highlight ErrorMsg ctermfg=167
-highlight LineNr ctermbg=None
-highlight CursorLineNr ctermbg=None
-highlight VertSplit ctermbg=None
-highlight CursorLine ctermbg=None
-highlight StatusLine ctermbg=None
-highlight StatusLine ctermfg=243
-highlight StatusLine cterm=None
-highlight StatusLineNC ctermbg=None
-highlight StatusLineNC ctermfg=243
-highlight StatusLineNC cterm=None
-highlight MatchParen ctermbg=None
-highlight ColorColumn ctermbg=None
-highlight SignColumn ctermbg=None
-highlight Error ctermbg=None
-highlight Error cterm=bold
 
 
 """"""""""""""""""""""""""""""""""""""""

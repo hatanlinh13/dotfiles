@@ -4,11 +4,11 @@
 
 # terminal emulator
 alt + Return
-	urxvt
+	termite
 
 # browser
-alt + c
-	google-chrome-stable
+alt + shift + Return
+	firefox
 
 # file manager
 alt + f
@@ -21,6 +21,13 @@ alt + r
 # program launcher
 alt + d
 	rofi -show run
+
+# switch input method
+# TODO: one single hotkey, hint = fcitx-remote
+alt + e
+	echo hook:module/im2 > /tmp/ipc_polybar_main
+alt + v
+	echo hook:module/im1 > /tmp/ipc_polybar_main
 
 # make sxhkd reload its configuration files:
 alt + super + r
@@ -51,7 +58,7 @@ alt + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest node
-alt + g
+alt + b
 	bspc node -s biggest
 
 #

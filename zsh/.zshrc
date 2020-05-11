@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=200000
+SAVEHIST=200000
 setopt appendhistory
 # Expire duplicate entries first when trimming history
 setopt HIST_EXPIRE_DUPS_FIRST
@@ -28,7 +28,7 @@ export VISUAL=/usr/bin/nvim
 export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/hatanlinh13/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -65,7 +65,7 @@ then
 	
 	SPACESHIP_USER_SHOW=always
 	SPACESHIP_USER_COLOR=green
-	SPACESHIP_USER_PREFIX="  "
+	SPACESHIP_USER_PREFIX=" "
 	SPACESHIP_USER_SUFFIX=""
 
 	SPACESHIP_DIR_COLOR=blue
@@ -169,6 +169,7 @@ zstyle ':completion:*' matcher-list '' \
   'r:|?=** m:{a-z\-}={A-Z\_}'
 
 # disable ctrl-q and ctrl-s
-stty -ixon
+#stty -ixon
 # force tmux to use 256 colors
-alias tmux="tmux -2"
+#alias tmux="tmux -2"
+alias vim=nvim

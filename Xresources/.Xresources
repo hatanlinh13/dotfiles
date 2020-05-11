@@ -1,19 +1,27 @@
 ! Colorscheme settings
-#include ".xrdb/colors/gruvbox-dark"
+#include ".xrdb/colors/onedark"
 
 ! Urxvt settings
 Rxvt*scrollBar:false
-URxvt*font: xft:DejaVuSansMonoNerdFontMono:size=12
-URxvt*boldFont: xft:DejaVuSansMonoNerdFontMono:size=12
+
 URxvt*letterSpace: 0
-URxvt*internalBorder: 20
+#define font1         Inconsolata
+#define font2         Inconsolata Nerd Font
+#define font3         DejaVu Sans Mono Nerd Font
+#define font4         Noto Sans Mono CJK JP
+URxvt*font:           xft:font1:pixelsize=16, xft:font2:pixelsize=14:minspace=false, xft:font3:pixelsize=14,xft:font4:pixelsize=14
+URxvt*boldFont:
+URxvt*italicFont:
+URxvt*boldItalicFont:
+
+URxvt*internalBorder: 24
 URxvt.depth: 32
-URxvt.background: [90]#000000
+!URxvt.background: [90]#000000
 !! scroll behavior
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
-URxvt*saveLines: 10000
+URxvt*saveLines: 100000
 !! Icons
 !URxvt.iconFile: /usr/share/icons/Moka/32x32/apps/terminal.png
 !! Extensions
@@ -32,3 +40,6 @@ Xft*dpi: 96
 Xft*hinting: 1
 Xft*antialias: 1
 Xft*rgba: rgba
+
+! xst
+#include ".xrdb/xst/xst.Xresources"
