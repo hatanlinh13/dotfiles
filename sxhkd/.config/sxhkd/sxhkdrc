@@ -11,15 +11,15 @@ alt + shift + Return
 	firefox
 
 # file manager
-alt + f
-	pcmanfm
+#alt + f
+#	pcmanfm
 
 # ranger
-alt + r
+alt + f
 	alacritty -e ranger
 
 # program launcher
-alt + d
+alt + s
 	rofi -show run
 
 # current windows
