@@ -14,6 +14,10 @@ call vundle#begin()            " initialize
 Plugin 'VundleVim/Vundle.vim'
                                " colorschemes
 Plugin 'joshdick/onedark.vim'
+                               " base16 colorspaces
+Plugin 'chriskempson/base16-vim'
+                               " colorscheme
+Plugin 'nanotech/jellybeans.vim'
                                " simple status line
 Plugin 'itchyny/lightline.vim'
                                " quoting/parenthesizing
@@ -48,7 +52,7 @@ set directory=$HOME/.vim/swapfiles//
 """"""""""""""""""""""""""""""""""""""""
 
 set background=dark " prefer dark variant
-colorscheme onedark " set the colorscheme
+colorscheme base16-twilight " set the colorscheme
 syntax on           " enable syntax highlighting
 
 
@@ -63,6 +67,9 @@ set showcmd
 set pastetoggle=<F3>
 " use system clipboard
 set clipboard=unnamedplus
+" Permanent undo
+set undodir=~/.vim/undodir
+set undofile
 
 
 """"""""""""""""""""""""""""""""""""""""

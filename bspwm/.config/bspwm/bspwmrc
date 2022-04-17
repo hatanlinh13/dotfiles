@@ -1,20 +1,20 @@
 #! /bin/sh
 
-bspc monitor -d tty web play entertainment misc
+bspc monitor -d 1 2 3 4 5
 
-bspc config border_width          2
-bspc config window_gap            25
-bspc config left_padding          25
-bspc config right_padding         25
+bspc config border_width          1
+#bspc config window_gap            25
+#bspc config left_padding          25
+#bspc config right_padding         25
 
-bspc config presel_feedback_color \#d75f5f
-bspc config focused_border_color  \#d75f5f
+bspc config presel_feedback_color \#8197BF
+bspc config focused_border_color  \#8197BF
 
 bspc config split_ratio           0.50
 bspc config borderless_monocle    true
 bspc config gapless_monocle       true
 
-bspc rule -a firefox border=false
+#bspc rule -a firefox border=false
 
 sxhkd &
 $HOME/.config/polybar/launch.sh

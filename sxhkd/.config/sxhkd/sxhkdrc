@@ -4,7 +4,7 @@
 
 # terminal emulator
 alt + Return
-	termite
+	alacritty
 
 # browser
 alt + shift + Return
@@ -16,18 +16,22 @@ alt + f
 
 # ranger
 alt + r
-	urxvt -e ranger
+	alacritty -e ranger
 
 # program launcher
 alt + d
 	rofi -show run
 
+# current windows
+alt + w
+	rofi -show window
+
 # switch input method
-# TODO: one single hotkey, hint = fcitx-remote
-alt + e
-	echo hook:module/im2 > /tmp/ipc_polybar_main
-alt + v
-	echo hook:module/im1 > /tmp/ipc_polybar_main
+# To do: one single hotkey, hint = fcitx-remote
+#alt + e
+#	echo hook:module/im2 > /tmp/ipc_polybar_main
+#alt + v
+#	echo hook:module/im1 > /tmp/ipc_polybar_main
 
 # make sxhkd reload its configuration files:
 alt + super + r

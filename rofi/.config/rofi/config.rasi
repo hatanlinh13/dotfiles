@@ -1,0 +1,4 @@
+configuration {
+	dpi: 144;
+}
+@theme "~/.config/rofi/base16-twilight.rasi"

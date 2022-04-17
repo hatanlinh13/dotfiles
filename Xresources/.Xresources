@@ -1,45 +1,45 @@
-! Colorscheme settings
-#include ".xrdb/colors/onedark"
+!! Colorscheme settings
+!#include ".xrdb/colors/onedark"
 
-! Urxvt settings
-Rxvt*scrollBar:false
+!! Urxvt settings
+!Rxvt*scrollBar:false
 
-URxvt*letterSpace: 0
-#define font1         Inconsolata
-#define font2         Inconsolata Nerd Font
-#define font3         DejaVu Sans Mono Nerd Font
-#define font4         Noto Sans Mono CJK JP
-URxvt*font:           xft:font1:pixelsize=16, xft:font2:pixelsize=14:minspace=false, xft:font3:pixelsize=14,xft:font4:pixelsize=14
-URxvt*boldFont:
-URxvt*italicFont:
-URxvt*boldItalicFont:
+!URxvt*letterSpace: 0
+!#define font1         Inconsolata
+!#define font2         Inconsolata Nerd Font
+!#define font3         DejaVu Sans Mono Nerd Font
+!#define font4         Noto Sans Mono CJK JP
+!URxvt*font:           xft:font1:pixelsize=16, xft:font2:pixelsize=14:minspace=false, xft:font3:pixelsize=14,xft:font4:pixelsize=14
+!URxvt*boldFont:
+!URxvt*italicFont:
+!URxvt*boldItalicFont:
 
-URxvt*internalBorder: 24
-URxvt.depth: 32
-!URxvt.background: [90]#000000
-!! scroll behavior
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: true
-URxvt*scrollTtyKeypress: true
-URxvt*saveLines: 100000
-!! Icons
-!URxvt.iconFile: /usr/share/icons/Moka/32x32/apps/terminal.png
-!! Extensions
-URxvt*perl-ext: eval
-URxvt*perl-ext-common:
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.iso14755: false
-URxvt.iso14755_52: false
+!URxvt*internalBorder: 24
+!URxvt.depth: 32
+!!URxvt.background: [90]#000000
+!!! scroll behavior
+!URxvt*scrollTtyOutput: false
+!URxvt*scrollWithBuffer: true
+!URxvt*scrollTtyKeypress: true
+!URxvt*saveLines: 100000
+!!! Icons
+!!URxvt.iconFile: /usr/share/icons/Moka/32x32/apps/terminal.png
+!!! Extensions
+!URxvt*perl-ext: eval
+!URxvt*perl-ext-common:
+!URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+!URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+!URxvt.iso14755: false
+!URxvt.iso14755_52: false
 
 ! Xft font configurations
+Xft*dpi: 144
 Xft*autohint: 0
 Xft*lcdfilter: lcddefault
-Xft*hintstyle: hintslight
-Xft*dpi: 96
+Xft*hintstyle: hintfull
 Xft*hinting: 1
 Xft*antialias: 1
 Xft*rgba: rgba
 
-! xst
-#include ".xrdb/xst/xst.Xresources"
+!! xst
+!#include ".xrdb/xst/xst.Xresources"
