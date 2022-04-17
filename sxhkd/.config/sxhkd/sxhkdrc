@@ -8,7 +8,7 @@ alt + Return
 
 # browser
 alt + shift + Return
-	firefox
+	google-chrome-stable
 
 # file manager
 #alt + f
