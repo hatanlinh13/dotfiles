@@ -4,6 +4,8 @@
 
 # terminal emulator
 alt + Return
+	alacritty -e tmux
+alt + ctrl + Return
 	alacritty
 
 # browser
