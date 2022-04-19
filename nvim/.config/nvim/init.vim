@@ -30,8 +30,6 @@ highlight NvimInternalError guifg=bg
 " Neovim specific plugins
 """""""""""""""""""""""""""""""""""""
 
-Plugin 'wellle/tmux-complete.vim'
-
 
 """""""""""""""""""""""""""""""""""""
 " Neovim specific configurations

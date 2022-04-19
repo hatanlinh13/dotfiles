@@ -12,12 +12,8 @@ call vundle#begin()            " initialize
 
                                " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-                               " colorschemes
-Plugin 'joshdick/onedark.vim'
                                " base16 colorspaces
 Plugin 'chriskempson/base16-vim'
-                               " colorscheme
-Plugin 'nanotech/jellybeans.vim'
                                " simple status line
 Plugin 'itchyny/lightline.vim'
                                " quoting/parenthesizing
@@ -28,6 +24,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
                                " language syntax and indentation
 Plugin 'sheerun/vim-polyglot'
+                               " file type icons
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()
 " PLUGINS END
