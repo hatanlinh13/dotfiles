@@ -37,7 +37,7 @@ filetype plugin indent on      " enable filetype indent
 set backspace=indent,eol,start " make backspace more sane
 set noerrorbells               " remove the annoying beeps
 set novisualbell               " remove visual error characters
-set nobackup                   " who needs backup when we have vcs :)
+set backup                     " enable backups, please remember to clean it eventually
 
                                " save annoying swap files into
                                " a specific directory
@@ -45,6 +45,7 @@ set nobackup                   " who needs backup when we have vcs :)
                                " with full path substituted
                                " to prevent file names conflictions
 set directory=$HOME/.vim/swapfiles//
+set backupdir=$HOME/.vim/backups//
 
 
 """"""""""""""""""""""""""""""""""""""""
