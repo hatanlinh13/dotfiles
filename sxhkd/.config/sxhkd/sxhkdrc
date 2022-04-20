@@ -39,6 +39,10 @@ alt + w
 alt + super + r
 	pkill -USR1 -x sxhkd
 
+# lock screen
+super + l
+	betterlockscreen --lock dimblur
+
 #
 # bspwm hotkeys
 #
