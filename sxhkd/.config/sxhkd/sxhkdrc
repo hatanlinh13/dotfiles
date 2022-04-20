@@ -28,6 +28,12 @@ alt + s
 alt + w
 	rofi -show window
 
+# dunst
+super + m
+	dunstctl close
+super + n
+	dunstctl history-pop
+
 # switch input method
 # To do: one single hotkey, hint = fcitx-remote
 #alt + e

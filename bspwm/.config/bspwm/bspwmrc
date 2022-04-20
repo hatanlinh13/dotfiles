@@ -17,4 +17,5 @@ bspc config gapless_monocle       true
 #bspc rule -a firefox border=false
 
 sxhkd &
+fcitx5 &
 $HOME/.config/polybar/launch.sh
