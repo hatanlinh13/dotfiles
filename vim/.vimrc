@@ -6,28 +6,28 @@ set nocompatible               " use vim settings
 
 " PLUGINS
 filetype off
-                               " set the runtime path to include Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()            " initialize
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-                               " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-                               " base16 colorspaces
-Plugin 'chriskempson/base16-vim'
-                               " simple status line
-Plugin 'itchyny/lightline.vim'
-                               " quoting/parenthesizing
-Plugin 'tpope/vim-surround'
-                               " file explorer
-Plugin 'scrooloose/nerdtree'
-                               " git flags for NERDtree
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-                               " language syntax and indentation
-Plugin 'sheerun/vim-polyglot'
-                               " file type icons
-Plugin 'ryanoasis/vim-devicons'
+call plug#begin() " initialize
 
-call vundle#end()
+                  " base16 colorspaces
+Plug 'chriskempson/base16-vim'
+                  " simple status line
+Plug 'itchyny/lightline.vim'
+                  " quoting/parenthesizing
+Plug 'tpope/vim-surround'
+                  " file explorer
+Plug 'scrooloose/nerdtree'
+                  " git flags for NERDtree
+Plug 'Xuyuanp/nerdtree-git-plugin'
+                  " file type icons
+Plug 'ryanoasis/vim-devicons'
+
+call plug#end()
 " PLUGINS END
 
 filetype plugin indent on      " enable filetype indent
@@ -96,8 +96,7 @@ set smartindent " smart indentation
 set cursorline " hightlight the current working line
 set wildmenu   " visual autocomplete for command menu
 set showmatch  " hightlight matching {[()]}
-               " disable preview attribute in completeopt
-set completeopt=menuone
+set completeopt=menu,menuone,noselect
 
                " show line number in hybrid mode on active normal, absolute
                " otherwise
