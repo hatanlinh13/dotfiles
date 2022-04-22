@@ -286,6 +286,7 @@ mapping = cmp.mapping.preset.insert({
   ['<Esc>'] = cmp.mapping.abort(),
   -- Accept currently selected item if true. Set `select` to `false` to only confirm explicitly selected items.
   ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  ['<Tab>'] = cmp.mapping.confirm({ select = true }),
   ['<Tab>'] = cmp.mapping(function(fallback)
     if cmp.visible() then
   	cmp.select_next_item()
