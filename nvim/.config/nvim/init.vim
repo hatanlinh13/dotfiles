@@ -35,6 +35,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " file type icons
 Plug 'ryanoasis/vim-devicons'
+" highlight yanked region
+Plug 'machakann/vim-highlightedyank'
+" auto change to root directory
+Plug 'airblade/vim-rooter'
 
 " configurations for lsp client
 Plug 'neovim/nvim-lspconfig'
