@@ -4,55 +4,222 @@
 
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
-
 source $HOME/.vimrc
+" use vim settings
+set nocompatible
+
+
+"""""""""""""""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""""""""""""""
+
+filetype off
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+
+" base16 colorspaces
+Plug 'chriskempson/base16-vim'
+" simple status line
+Plug 'itchyny/lightline.vim'
+" quoting/parenthesizing
+Plug 'tpope/vim-surround'
+" file explorer
+Plug 'scrooloose/nerdtree'
+" git flags for NERDtree
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" file type icons
+Plug 'ryanoasis/vim-devicons'
+
+" configurations for lsp client
+Plug 'neovim/nvim-lspconfig'
+" auto completion
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+" snippets
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+" syntax highlight
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+call plug#end()
 
 
 """""""""""""""""""""""""""""""""""""
 " General vim configurations
 """""""""""""""""""""""""""""""""""""
 
-set termguicolors
-" highlight groups test
-" :so $VIMRUNTIME/syntax/hitest.vim
-highlight VertSplit guifg=#5C6370
-highlight DiffChange gui=None
-highlight SpellBad gui=None
-highlight PmenuThumb guifg=bg
-highlight RedrawDebugClear guifg=bg
-highlight RedrawDebugComposed guifg=bg
-highlight RedrawDebugRecompose guifg=bg
-highlight MatchParen gui=None guifg=bg guibg=fg
-highlight NvimInternalError guifg=bg
+" enable filetype indent
+filetype plugin indent on
+" make backspace more sane
+set backspace=indent,eol,start
+" remove the annoying beeps
+set noerrorbells
+" remove visual error characters
+set novisualbell
+
+""""""""""""""""""""""""""""""""""""""""
+" editting
+""""""""""""""""""""""""""""""""""""""""
+
+if !has('nvim')
+	set noesckeys
+endif
+" use system clipboard
+set clipboard=unnamedplus
+set showcmd
+set pastetoggle=<F3>
 
 
 """""""""""""""""""""""""""""""""""""
-" Neovim specific plugins
+" Backups and swap
 """""""""""""""""""""""""""""""""""""
 
-" plug#begin not needed because we called it in vimrc already
-"call plug#begin() " initialize
+" save annoying swap files into
+" a specific directory
+" the last double slash (//) make swap files
+" with full path substituted
+" to prevent file names conflictions
+set directory=$HOME/.vim/swapfiles//
+" enable backups, please remember to clean it eventually
+set backup
+set backupdir=$HOME/.vim/backups//
+" Permanent undo
+set undofile
+set undodir=~/.vim/undodir
 
-                  " configurations for lsp client
-Plug 'neovim/nvim-lspconfig'
-                  " auto-completion
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-                  " snippets
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-                  " syntax highlight
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-" need plug#end so that lua script below could run
-call plug#end()
+""""""""""""""""""""""""""""""""""""""""
+" colors
+""""""""""""""""""""""""""""""""""""""""
+
+" prefer dark variant
+set background=dark
+" set the colorscheme
+colorscheme base16-twilight
+" enable syntax highlighting
+syntax on
+
+
+""""""""""""""""""""""""""""""""""""""""
+" spaces and tabs
+""""""""""""""""""""""""""""""""""""""""
+
+" number of visual spaces per tab
+set tabstop=4
+" number of visual spaces per tab when editing
+set softtabstop=4
+" number of visual spaces for each step of indent
+set shiftwidth=4
+" expand tab into spaces
+set expandtab
+
+
+""""""""""""""""""""""""""""""""""""""""
+" indentation
+""""""""""""""""""""""""""""""""""""""""
+
+" match indent on new line
+set autoindent
+" smart indentation
+set smartindent
+
+
+""""""""""""""""""""""""""""""""""""""""
+" UI config
+""""""""""""""""""""""""""""""""""""""""
+
+" hightlight the current working line
+set cursorline
+" visual autocomplete for command menu
+set wildmenu
+" hightlight matching {[()]}
+set showmatch
+set completeopt=menu,menuone,noselect
+
+" show line number in hybrid mode on active normal
+" absolute otherwise
+set number relativenumber
+nnoremap <C-e> :set relativenumber!<CR>
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
+
+
+""""""""""""""""""""""""""""""""""""""""
+" searching
+""""""""""""""""""""""""""""""""""""""""
+
+" case insensitive search
+set ignorecase
+" if there are uppercase letters, become case sensitive
+set smartcase
+" search as characters are entered
+set incsearch
+" hightlight matches
+set hlsearch
+" map a key binding to turn off search hightlighting
+nnoremap <leader><space> :nohlsearch<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""
+" movement
+""""""""""""""""""""""""""""""""""""""""
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+
+""""""""""""""""""""""""""""""""""""""""
+" lightline
+""""""""""""""""""""""""""""""""""""""""
+
+" add status line
+set laststatus=2
+" remove mode in base status line
+set noshowmode
+let g:lightline = { 
+                \ 'colorscheme': 'jellybeans',
+                \ 'subseparator': { 'right': '', 'left': '' },
+                \ }
+
+
+""""""""""""""""""""""""""""""""""""""""
+" NERDtree
+""""""""""""""""""""""""""""""""""""""""
+
+" open NERDTree automatically when vim starts up if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" open NERDTree automatically when vim starts up on opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" key bindings
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 
 """""""""""""""""""""""""""""""""""""
 " Neovim specific configurations
+"""""""""""""""""""""""""""""""""""""
+
+set termguicolors
+
+
+"""""""""""""""""""""""""""""""""""""
+" Lua configurations
 """""""""""""""""""""""""""""""""""""
 
 lua << LUACONFIG
