@@ -283,8 +283,9 @@ mapping = cmp.mapping.preset.insert({
   ['<C-f>'] = cmp.mapping.scroll_docs(4),
   ['<C-Space>'] = cmp.mapping.complete(),
   ['<C-e>'] = cmp.mapping.abort(),
+  ['<Esc>'] = cmp.mapping.abort(),
   -- Accept currently selected item if true. Set `select` to `false` to only confirm explicitly selected items.
-  ['<CR>'] = cmp.mapping.confirm({ select = false }),
+  ['<CR>'] = cmp.mapping.confirm({ select = true }),
   ['<Tab>'] = cmp.mapping(function(fallback)
     if cmp.visible() then
   	cmp.select_next_item()
