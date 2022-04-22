@@ -2,6 +2,8 @@
 " General vim configurations
 """""""""""""""""""""""""""""""""""""
 
+" Fish doesn't play all that well with others
+set shell=/bin/bash
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source $HOME/.vimrc
@@ -49,8 +51,8 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 " snippets
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 " syntax highlight
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -266,8 +268,8 @@ cmp.setup({
 snippet = {
   -- REQUIRED - you must specify a snippet engine
   expand = function(args)
-	vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-	-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+	-- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+	require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
 	-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
 	-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
   end,
@@ -277,16 +279,35 @@ window = {
   -- documentation = cmp.config.window.bordered(),
 },
 mapping = cmp.mapping.preset.insert({
-  ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+  ['<C-d>'] = cmp.mapping.scroll_docs(-4),
   ['<C-f>'] = cmp.mapping.scroll_docs(4),
   ['<C-Space>'] = cmp.mapping.complete(),
   ['<C-e>'] = cmp.mapping.abort(),
-  ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  -- Accept currently selected item if true. Set `select` to `false` to only confirm explicitly selected items.
+  ['<CR>'] = cmp.mapping.confirm({ select = false }),
+  ['<Tab>'] = cmp.mapping(function(fallback)
+    if cmp.visible() then
+  	cmp.select_next_item()
+    elseif luasnip.expand_or_jumpable() then
+  	luasnip.expand_or_jump()
+    else
+  	fallback()
+    end
+  end, { 'i', 's' }),
+  ['<S-Tab>'] = cmp.mapping(function(fallback)
+    if cmp.visible() then
+  	cmp.select_prev_item()
+    elseif luasnip.jumpable(-1) then
+  	luasnip.jump(-1)
+    else
+  	fallback()
+    end
+  end, { 'i', 's' }),
 }),
 sources = cmp.config.sources({
   { name = 'nvim_lsp' },
-  { name = 'vsnip' }, -- For vsnip users.
-  -- { name = 'luasnip' }, -- For luasnip users.
+  -- { name = 'vsnip' }, -- For vsnip users.
+  { name = 'luasnip' }, -- For luasnip users.
   -- { name = 'ultisnips' }, -- For ultisnips users.
   -- { name = 'snippy' }, -- For snippy users.
 }, {
