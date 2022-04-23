@@ -56,6 +56,9 @@ Plug 'hrsh7th/vim-vsnip'
 " syntax highlight
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" rust
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 
@@ -112,7 +115,7 @@ set background=dark
 " set the colorscheme
 colorscheme base16-twilight
 " enable syntax highlighting
-syntax on
+syntax enable
 
 
 """"""""""""""""""""""""""""""""""""""""
@@ -215,6 +218,18 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " key bindings
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""
+" vim-rooter
+""""""""""""""""""""""""""""""""""""""""
+
+let g:rooter_manual_only = 1
+
+""""""""""""""""""""""""""""""""""""""""
+" Rust
+""""""""""""""""""""""""""""""""""""""""
+
+let g:rustfmt_autosave = 1
 
 
 """""""""""""""""""""""""""""""""""""
@@ -329,7 +344,7 @@ sources = cmp.config.sources({
 -- Setup lspconfig + cmp
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'clangd', 'rust-analyzer', 'pyright' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright' }
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
