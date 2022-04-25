@@ -25,6 +25,8 @@ endif
 
 call plug#begin()
 
+"" VIM
+
 " base16 colorspaces
 Plug 'chriskempson/base16-vim'
 " simple status line
@@ -41,6 +43,11 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'machakann/vim-highlightedyank'
 " auto change to root directory
 Plug 'airblade/vim-rooter'
+
+"" NEOVIM
+
+" autopairs
+Plug 'windwp/nvim-autopairs'
 
 " configurations for lsp client
 Plug 'neovim/nvim-lspconfig'
@@ -65,8 +72,8 @@ Plug 'simrat39/rust-tools.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'mfussenegger/nvim-dap'
 
-" autopairs
-Plug 'windwp/nvim-autopairs'
+" clangd_extensions
+Plug 'p00f/clangd_extensions.nvim'
 
 call plug#end()
 
@@ -396,6 +403,9 @@ end
 
 -- rust-tools
 require('rust-tools').setup({})
+
+-- clangd_extensions
+require("clangd_extensions").setup()
 
 -- autopairs
 require('nvim-autopairs').setup{}
