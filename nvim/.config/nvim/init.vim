@@ -41,6 +41,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'machakann/vim-highlightedyank'
 " auto change to root directory
 Plug 'airblade/vim-rooter'
+" autopairs
+Plug 'windwp/nvim-autopairs'
 
 " configurations for lsp client
 Plug 'neovim/nvim-lspconfig'
@@ -356,6 +358,9 @@ for _, lsp in pairs(servers) do
     }
   }
 end
+
+-- autopairs
+require('nvim-autopairs').setup{}
 LUACONFIG
 
 
