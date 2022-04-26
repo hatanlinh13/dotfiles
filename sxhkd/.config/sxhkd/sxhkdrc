@@ -123,6 +123,12 @@ alt + {o,i}
 alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+# next and previous node in monocle mode
+alt + n
+    bspc node -f next
+alt + shift + n
+    bspc node -f prev
+
 #
 # preselect
 #
