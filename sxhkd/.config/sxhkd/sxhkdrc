@@ -10,7 +10,7 @@ alt + ctrl + Return
 
 # browser
 alt + shift + Return
-	google-chrome-stable
+	firefox
 
 # file manager
 #alt + f

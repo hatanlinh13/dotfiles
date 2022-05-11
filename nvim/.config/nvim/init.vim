@@ -66,7 +66,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " rust
 Plug 'rust-lang/rust.vim'
 " rust-tools
-Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/rust-tools.nvim'
 " rust debugging
 Plug 'nvim-lua/plenary.nvim'
