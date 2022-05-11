@@ -164,3 +164,7 @@ alt + super + shift + {h,j,k,l}
 # move a floating window
 alt + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# balance nodes in current workspace
+super + b
+    bspc node @/ -B
