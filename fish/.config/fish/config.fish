@@ -18,7 +18,7 @@ if status is-interactive
     alias gcp="git cherry-pick"
     alias gmv="git mv"
     alias grb="git rebase"
-    alias grm="git remove"
+    alias grm="git rm"
     alias grs="git restore"
     alias gpull="git pull"
     alias gpush="git push"
