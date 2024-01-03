@@ -1,2 +1,3 @@
 vim/.vim/*
 lightline/.vim/bundle/lightline.vim/*
+fish/.config/fish/fish_variables
