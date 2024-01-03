@@ -1,0 +1,74 @@
+[[colors.indexed_colors]]
+color = "0xcda869"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0x9b703f"
+index = 17
+
+[[colors.indexed_colors]]
+color = "0x323537"
+index = 18
+
+[[colors.indexed_colors]]
+color = "0x464b50"
+index = 19
+
+[[colors.indexed_colors]]
+color = "0x838184"
+index = 20
+
+[[colors.indexed_colors]]
+color = "0xc3c3c3"
+index = 21
+
+[colors.bright]
+black = "0x5f5a60"
+blue = "0x7587a6"
+cyan = "0xafc4db"
+green = "0x8f9d6a"
+magenta = "0x9b859d"
+red = "0xcf6a4c"
+white = "0xffffff"
+yellow = "0xf9ee98"
+
+[colors.cursor]
+cursor = "0xa7a7a7"
+text = "0x1e1e1e"
+
+[colors.normal]
+black = "0x1e1e1e"
+blue = "0x7587a6"
+cyan = "0xafc4db"
+green = "0x8f9d6a"
+magenta = "0x9b859d"
+red = "0xcf6a4c"
+white = "0xa7a7a7"
+yellow = "0xf9ee98"
+
+[colors.primary]
+background = "0x1e1e1e"
+foreground = "0xa7a7a7"
+
+[font]
+size = 11.5
+
+[font.bold]
+family = "Hack Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack Nerd Font Mono"
+style = "BoldItalic"
+
+[font.italic]
+family = "Hack Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+style = "Regular"
+
+[window.padding]
+x = 5
+y = 5
