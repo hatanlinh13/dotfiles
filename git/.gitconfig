@@ -2,4 +2,4 @@
 	email = hatanlinh13@gmail.com
 	name = Ha Tan Linh
 [core]
-	askpass = 
+	editor = nvim
