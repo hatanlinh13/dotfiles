@@ -31,3 +31,6 @@ style = "Italic"
 family = "Hack Nerd Font"
 style = "Regular"
 
+[shell]
+program = "/usr/bin/tmux"
+
