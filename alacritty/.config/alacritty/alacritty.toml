@@ -4,9 +4,9 @@ import = [
 ]
 
 [window]
-dimensions = { columns = 100, lines = 44 }
+dimensions = { columns = 100, lines = 45 }
 padding = { x = 0, y = 0 }
-decorations = "Full"
+decorations = "None"
 opacity = 0.65
 blur = true
 startup_mode = "Windowed"
