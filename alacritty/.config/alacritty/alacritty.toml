@@ -1,5 +1,8 @@
 import = [
-    "~/.config/alacritty/colorscheme.toml",
+    # colorscheme
+    "~/.config/alacritty/everforest.toml",
+
+    # keybindings
     "~/.config/alacritty/keybindings.toml",
 ]
 
@@ -7,7 +10,7 @@ import = [
 dimensions = { columns = 100, lines = 45 }
 padding = { x = 0, y = 0 }
 decorations = "None"
-opacity = 0.65
+opacity = 0.90
 blur = true
 startup_mode = "Windowed"
 title = "@tlh"
@@ -33,4 +36,3 @@ style = "Regular"
 
 [shell]
 program = "/usr/bin/tmux"
-
