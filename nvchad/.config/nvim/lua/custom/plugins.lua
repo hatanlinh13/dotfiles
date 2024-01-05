@@ -8,41 +8,18 @@ local plugins = {
     {
         "nvim-treesitter/nvim-treesitter",
         opts = {
-            ensure_installed = {
-                -- defaults 
-                "vim",
-                "lua",
-
-                -- low level
-                "c",
-                "cpp",
-                "rust",
-                "python",
-
-                -- scripting
-                "bash",
-                "fish",
-
-                -- version control
-                "diff",
-                "git_config",
-                "git_rebase",
-                "gitattributes",
-                "gitcommit",
-                "gitignore",
-
-                -- web dev 
-                "html",
-                "css",
-                "javascript",
-                "typescript",
-                "tsx",
-                "json",
-            },
+            auto_install = true,
         },
+    },
+
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            require "plugins.configs.lspconfig"
+            require "custom.configs.lspconfig"
+        end,
     },
 
 }
 
 return plugins
-

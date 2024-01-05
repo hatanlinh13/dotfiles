@@ -3,7 +3,7 @@ local M = {}
 
 M.ui = {
 
-    theme = 'kanagawa',
+    theme = 'everforest',
     transparency = true,
 
     statusline = {
@@ -27,4 +27,3 @@ M.plugins = 'custom.plugins'
 M.mappings = require 'custom.mappings'
 
 return M
-
