@@ -24,6 +24,14 @@ local plugins = {
     },
 
     {
+        "hrsh7th/nvim-cmp",
+        opts = {
+            preselect = require('cmp').PreselectMode.None,
+            completion = { completeopt = "menu,menuone,noselect" },
+        }
+    },
+
+    {
         "neovim/nvim-lspconfig",
         config = function()
             require "plugins.configs.lspconfig"
