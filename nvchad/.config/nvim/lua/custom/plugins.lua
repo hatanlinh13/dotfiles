@@ -6,6 +6,11 @@ local plugins = {
     },
 
     {
+        "famiu/bufdelete.nvim",
+        lazy = false,
+    },
+
+    {
         "nvim-treesitter/nvim-treesitter",
         opts = {
             auto_install = true,
