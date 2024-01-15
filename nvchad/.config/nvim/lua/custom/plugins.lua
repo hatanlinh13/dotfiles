@@ -33,7 +33,11 @@ local plugins = {
         opts = {
             preselect = require('cmp').PreselectMode.None,
             completion = { completeopt = "menu,menuone,noselect" },
-        }
+            mapping = {
+                ["<C-u>"] = require('cmp').mapping.scroll_docs(-4),
+                ["<C-d>"] = require('cmp').mapping.scroll_docs(4),
+            },
+        },
     },
 
     {
@@ -76,7 +80,7 @@ local plugins = {
                 suggestion = {
                     auto_trigger = true,
                     keymap = {
-                        accept = "<M-j>",
+                        accept = "<C-f>",
                     },
                 },
             })
