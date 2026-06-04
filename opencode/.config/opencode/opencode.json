@@ -1,0 +1,11 @@
+{
+  "agent": {
+    "ask": {
+      "mode": "primary",
+      "tools": {
+        "*": false
+      },
+      "prompt": ""
+    }
+  }
+}
